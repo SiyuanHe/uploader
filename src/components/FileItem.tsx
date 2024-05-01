@@ -78,6 +78,16 @@ export function FileItem({
         >
           Delete
         </button>
+
+        <button
+          className="flex w-full flex-1 cursor-pointer items-center justify-center
+           rounded-md bg-red-500 px-4 py-2 text-white hover:bg-red-600
+           disabled:cursor-not-allowed disabled:opacity-50"
+          onClick={() => deleteFile(file.id)}
+          disabled={file.isDeleting}
+        >
+          Synthesize
+        </button>
       </div>
 
       {file.isDeleting && (

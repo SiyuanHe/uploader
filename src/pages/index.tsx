@@ -72,9 +72,6 @@ function ModeSwitchMenu({ uploadMode, handleModeChange }: ModeSwitchMenuProps) {
   return (
     <ul className="flex items-center justify-center gap-2">
       <li>
-        <label htmlFor="uploadMode">Upload Mode:</label>
-      </li>
-      <li>
         <select
           className="rounded-md border-2 border-gray-300"
           id="uploadMode"

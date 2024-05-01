@@ -16,16 +16,6 @@ export function UploadFilesFormUI({
       className="flex flex-col items-center justify-center gap-3"
       onSubmit={uploadToServer}
     >
-      <h1 className="text-2xl">
-        File upload example using Next.js, MinIO S3, Prisma and PostgreSQL
-      </h1>
-      <p className="text-lg">{`Total file(s) size should not exceed ${maxFileSize} MB`}</p>
-      <Link
-        href={GIT_HUB_REPO_LINK}
-        className="text-blue-500 hover:text-blue-600 hover:underline"
-      >
-        GitHub repo
-      </Link>
       {isLoading ? (
         <LoadSpinner />
       ) : (
