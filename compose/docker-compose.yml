@@ -20,8 +20,8 @@ services:
       # 127.0.0.1 minio
       # Or use the IP address of your physical machine, localhost will not work for presigned URLs
       # https://stackoverflow.com/questions/24319662/from-inside-of-a-docker-container-how-do-i-connect-to-the-localhost-of-the-mach
-      - S3_ENDPOINT=kubernetes.docker.internal
-      - S3_PORT=9000
+      - S3_ENDPOINT=minio
+      - S3_PORT=9002
       - S3_ACCESS_KEY=minio
       - S3_SECRET_KEY=miniosecret
       - S3_BUCKET_NAME=s3bucket
@@ -46,8 +46,11 @@ services:
     container_name: s3minio
     image: bitnami/minio:latest
     ports:
-      - "9000:9000"
       - "9001:9001"
+      - "9002:9002"
+    environment:
+      - MINIO_API_PORT_NUMBER=9002
+      - MINIO_CONSOLE_PORT_NUMBER=9001
     volumes:
       - minio_storage:/data
 volumes:
